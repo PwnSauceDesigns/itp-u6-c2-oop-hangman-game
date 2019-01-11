@@ -34,7 +34,7 @@ class GuessWord(object):
             if letter.lower() in self.answer:
 
                 new_masked_word = ''
-                for answer_char, masked_char in zip(self.answer, self.masked):  # this part is hard as hell. Had to cheat
+                for answer_char, masked_char in zip(self.answer, self.masked):  # this part is hard as hell. Had to cheat - ASK FOR CLARITY!!!
                     if answer_char.lower() == letter.lower():
                         new_masked_word += answer_char
                     else:
@@ -68,8 +68,8 @@ class HangmanGame(object):
         self.remaining_misses = number_of_guesses
         self.previous_guesses = []
         self.word = GuessWord(self.select_random_word(word_list))
-        # self.answer = word.answer
 
+    # NEED HELP HERE - WTF IS THIS DECORATOR AND FIRST ARGUMENT!?!?
     @classmethod
     def select_random_word(cls, list_of_words):
         if len(list_of_words) is 0:
